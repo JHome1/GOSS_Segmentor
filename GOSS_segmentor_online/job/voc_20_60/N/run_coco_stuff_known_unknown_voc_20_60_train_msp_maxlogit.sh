@@ -1,0 +1,1 @@
+python -m torch.distributed.launch --nproc_per_node=2 ./tools/train_net.py --cfg configs/wholistic_segmentor_coco_stuff_known_unknown_voc_20_60.yaml DATASET.NUM_CLASSES 111 LOSS.SEMANTIC.IGNORE 111 OUTPUT_DIR "./output/wholistic_segmentor_coco_stuff_known_unknown_voc_20_60_N_msp_maxlogit"

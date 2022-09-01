@@ -1,0 +1,101 @@
+MODEL:
+  META_ARCHITECTURE: "wholistic_segmentor"
+  BN_MOMENTUM: 0.01
+  BACKBONE:
+    META: "resnet"
+    NAME: "resnet50"
+    DILATION: (False, False, False)
+    PRETRAINED: True
+  DECODER:
+    IN_CHANNELS: 2048
+    FEATURE_KEY: "res5"
+    DECODER_CHANNELS: 256
+    ATROUS_RATES: (3, 6, 9)
+  WHOLISTIC_SEGMENTOR:
+    LOW_LEVEL_CHANNELS: (1024, 512, 256)
+    LOW_LEVEL_KEY: ["res4", "res3", "res2"]
+    LOW_LEVEL_CHANNELS_PROJECT: (128, 64, 32)
+    SEGMENT:
+      ENABLE: True
+      LOW_LEVEL_CHANNELS_PROJECT: (64, 32, 16)
+      DECODER_CHANNELS: 128
+      HEAD_CHANNELS: 32
+      ASPP_CHANNELS: 256
+      NUM_CLASSES: (1, 2)
+      CLASS_KEY: ["center", "offset"]
+
+DATASET:
+  ROOT: "./data/coco"
+  DATASET: "coco_stuff_known_unknown"
+  DATASET_SPLIT: manual
+  DATASET_SPLIT_SPECIFIC: "_20_60"
+  NUM_CLASSES: 112
+  # NUM_CLASSES:172  
+  TRAIN_SPLIT: 'train2017'
+  TEST_SPLIT:  'val2017'
+  #####################
+  MIN_RESIZE_VALUE: 641
+  MAX_RESIZE_VALUE: 641
+  RESIZE_FACTOR: 32
+  CROP_SIZE: (641, 641)
+  # MIN_RESIZE_VALUE:384
+  # MAX_RESIZE_VALUE:384
+  # RESIZE_FACTOR:32
+  # CROP_SIZE:(384, 384)
+  ######################
+  MIRROR: True
+  MIN_SCALE: 0.5  
+  MAX_SCALE: 1.5  
+  SCALE_STEP_SIZE: 0.1
+  MEAN: (0.485, 0.456, 0.406)
+  STD:  (0.229, 0.224, 0.225)
+  SEMANTIC_ONLY: False
+  SEGMENT_ONLY:  False
+  IGNORE_STUFF_IN_OFFSET: True
+  SMALL_SEGMENT_AREA: 4096
+  SMALL_SEGMENT_WEIGHT: 3
+
+SOLVER:
+  BASE_LR: 0.00005
+  WEIGHT_DECAY: 0.0
+  WEIGHT_DECAY_NORM: 0.0
+  BIAS_LR_FACTOR: 1.0
+  WEIGHT_DECAY_BIAS: 0.0
+  OPTIMIZER: "adam"
+  LR_SCHEDULER_NAME: "WarmupPolyLR"
+  WARMUP_ITERS: 0
+
+LOSS:
+  SEMANTIC:
+    NAME: "cross_entropy"
+    IGNORE: 255
+
+TRAIN:
+  IMS_PER_BATCH: 10  
+  MAX_ITER: 60000
+
+DEBUG:
+  DEBUG: True
+  DEBUG_FREQ: 100
+
+TEST:
+  CROP_SIZE: (641, 641)
+  EVAL_WHOLISTIC: True
+  EVAL_SEMANTIC:  True
+  EVAL_SEMANTIC_CONFIDENCE_ADJUSTMENT: False
+  EVAL_SEMANTIC_ANOMALY:               False
+  EVAL_SEMANTIC_MSP:                   False
+  EVAL_SEMANTIC_MAXLOGIT:              False
+  CONFIDENCE_ADJUSTMENT_SCALE: 5.0
+
+POST_PROCESSING:
+  CENTER_THRESHOLD: 0.1  
+  NMS_KERNEL: 7
+  TOP_K_INSTANCE: 200
+  STUFF_AREA: 4096
+
+################################################################################
+OUTPUT_DIR: "./output/wholistic_segmentor_coco_stuff_known_unknown_manual_20_60"
+################################################################################
+GPUS: (0, 1, 2, 3, 4, 5, 6, 7)
+WORKERS: 1
