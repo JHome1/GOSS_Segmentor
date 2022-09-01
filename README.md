@@ -1,1 +1,13 @@
 # GOSS_Segmentor
+This repository is for GOSS Segmentor (GST) introduced in the following paper:  
+**GOSS: Towards Generalized Open-set Semantic Segmentation**
+## Paper and Citation
+The paper can be downloaded from [arXiv](https://arxiv.org/abs/2203.12116).  
+If you find our paper/code is useful, please cite:
+
+        @article{hong2022goss,
+                 title={Goss: Towards generalized open-set semantic segmentation},
+                 author={Hong, Jie and Li, Weihao and Han, Junlin and Zheng, Jiyang and Fang, Pengfei and Harandi, Mehrtash and Petersson, Lars},
+                 journal={arXiv preprint arXiv:2203.12116},
+                 year={2022}
+                 }
