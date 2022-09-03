@@ -11,7 +11,7 @@ If you find our paper/code is useful, please cite:
                  journal={arXiv preprint arXiv:2203.12116},
                  year={2022}
                  }
-## Problem Definition
+## Task Definition
 <p align="center">
   <img width="900" src="https://github.com/JHome1/GOSS_Segmentor/blob/main/Figure1.png">
 </p>
