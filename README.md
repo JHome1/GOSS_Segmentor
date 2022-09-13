@@ -15,3 +15,5 @@ If you find our paper/code is useful, please cite:
 <p align="center">
   <img width="900" src="https://github.com/JHome1/GOSS_Segmentor/blob/main/Figure1.png">
 </p>
+## Environments
+* Install packages following ```README_pkgs.md```
