@@ -20,7 +20,7 @@ If you find our paper/code is useful, please cite:
 
 ## Environments
 * Install packages in ```README_pkgs.md```
-* If you have error of "undefined symbol" as importing ```pycocotools```, use the following steps:
+* If you had the error of "undefined symbol" as importing ```pycocotools```, use the following steps:
 ```
 pip uninstall pycocotools
 conda install Cython
