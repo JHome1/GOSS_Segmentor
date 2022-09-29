@@ -26,6 +26,5 @@ pip uninstall pycocotools
 conda install Cython
 git clone https://github.com/pdollar/coco.git
 cd ./coco/PythonAPI
-CC=gcc python3 setup.py build_ext --inplace
-copy ./coco/PythonAPI/pycocotools to .../.conda/envs/{myenvname}/lib/python3.8/site-packages
+CC=gcc python3 setup.py build_ext install
 ```
