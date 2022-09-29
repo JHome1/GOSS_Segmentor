@@ -23,7 +23,6 @@ If you find our paper/code is useful, please cite:
 * If you had the error of "undefined symbol" as importing ```pycocotools```, use the following steps:
 ```
 pip uninstall pycocotools
-conda install Cython
 git clone https://github.com/pdollar/coco.git
 cd ./coco/PythonAPI
 CC=gcc python3 setup.py build_ext install
