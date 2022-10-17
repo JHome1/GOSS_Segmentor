@@ -27,3 +27,19 @@ git clone https://github.com/pdollar/coco.git
 cd ./coco/PythonAPI
 CC=gcc python3 setup.py build_ext install
 ```
+
+## Datasets
+We expect the directory structure to be the following:
+```
+datasets/coco
+  train2017/    # train images
+  val2017/      # val images
+  
+datasets/coco_stuff_voc
+  annotations/
+    segments_voc_20_60_train2017.json
+    segments_voc_20_60_val2017.json
+  voc_20_60/
+    voc_20_60_train2017/
+    voc_20_60_val2017/
+```
