@@ -42,4 +42,20 @@ datasets/coco_stuff_voc
   voc_20_60/
     voc_20_60_train2017/
     voc_20_60_val2017/
+    
+ datasets/coco_stuff_manual
+  annotations/
+    segments_manual_20_60_train2017.json
+    segments_manual_20_60_val2017.json
+  manual_20_60/
+    manual_20_60_train2017/
+    manual_20_60_val2017/
+    
+ datasets/coco_stuff_random
+  annotations/
+    segments_random_20_60_train2017.json
+    segments_random_20_60_val2017.json
+  random_20_60/
+    random_20_60_train2017/
+    random_20_60_val2017/
 ```
