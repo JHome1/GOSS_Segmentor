@@ -29,7 +29,7 @@ CC=gcc python3 setup.py build_ext install
 ```
 
 ## Datasets
-We expect the directory structure to be the following:
+You could download datasets from [here](https://arxiv.org/abs/2203.12116). We expect the directory structure to be the following:
 ```
 datasets/coco
   train2017/    # train images
