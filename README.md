@@ -4,6 +4,7 @@ This repository is for GOSS Segmentor (GST) introduced in the following paper:
 
 ## Paper and Citation  
 If you find our paper/code is useful, please cite:
+
 @article{hong2023goss,
          title={Goss: Towards generalized open-set semantic segmentation},
          author={Hong, Jie and Li, Weihao and Han, Junlin and Zheng, Jiyang and Fang, Pengfei and Harandi, Mehrtash and Petersson, Lars},
