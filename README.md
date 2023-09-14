@@ -1,6 +1,6 @@
 # GOSS_Segmentor
 This repository is for GOSS Segmentor (GST) introduced in the following paper:  
-**GOSS: Towards Generalized Open-set Semantic Segmentation**
+**"GOSS: Towards Generalized Open-set Semantic Segmentation"**
 
 ## Paper and Citation  
 If you find our paper/code is useful, please cite:
