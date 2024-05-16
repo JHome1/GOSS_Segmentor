@@ -13,7 +13,8 @@ If you find our paper/code is useful, please cite:
          number={4},
          pages={2391--2404},
          year={2024},
-         publisher={Springer}}
+         publisher={Springer}
+         }
 ```
                  
 ## Task Definition
